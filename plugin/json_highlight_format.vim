@@ -22,7 +22,7 @@ try:
     jsonText = "\n".join(selected)
 
     parsed = json.loads(jsonText)
-    formatted = json.dumps(parsed, indent=4, sort_keys=True) 
+    formatted = json.dumps(parsed, indent=4, sort_keys=True, ensure_ascii=False)
     replaced_lines = start_keep + formatted + end_keep
 
     lines = replaced_lines.split("\n")

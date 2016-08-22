@@ -25,7 +25,7 @@ try:
     formatted = json.dumps(parsed, indent=4, sort_keys=True, ensure_ascii=False)
     replaced_lines = start_keep + formatted + end_keep
 
-    lines = replaced_lines.split("\n")
+    lines = [l.encode('utf-8') for l in replaced_lines.split("\n")]
     buf[:] = buf[:start] + lines + buf[end + 1:]
 
 except Exception, e:
